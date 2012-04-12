@@ -37,7 +37,7 @@ botbrew_do_build() {
 			CPPFLAGS="-I${G_INCDIR} -I${G_INCDIR}/ncursesw -I${G_INCDIR}/musl ${G_CPPFLAGS}" CFLAGS="${G_ALL_CFLAGS}" \
 			LDFLAGS="-L${G_LIBDIR} -L$(pwd)" LIBS="-lmusl" \
 			../${G_SOURCE}/configure ${G_SYSTEMPREFIX[@]} --host=${G_TRIPLET} \
-				 --enable-shared
+				 --enable-shared --enable-ipv6
 			cat > Modules/Setup.local <<-EOF
 				#readline readline.c -lreadline -lncursesw
 				#_curses _cursesmodule.c -lncursesw
